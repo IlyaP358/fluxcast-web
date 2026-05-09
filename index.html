@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FluxCast - Wireless display casting for Linux</title>
+
+    <meta name="description"
+        content="FluxCast is a wireless display casting tool for Linux supporting Miracast (WFD), DLNA, and Chromecast.">
+
+    <link rel="icon" type="image/png" href="flcast_logo_512x512.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="glow-background"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo-container">
+                <img src="flcast_logo_512x512.png" alt="FluxCast Logo" class="logo">
+                <span class="brand-name">FluxCast</span>
+            </div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#docs">Documentation</a>
+                <a href="https://github.com/IlyaP358/fluxcast" target="_blank" class="github-btn">
+                    <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                        </path>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Wirelessly cast your<br><span class="gradient-text">Linux Desktop</span></h1>
+                <p class="hero-subtitle">I wanted to just watch movies by streaming them from my linux laptop, but
+                    nothing
+                    worked... so I created Fluxcast!</p>
+
+                <div class="hero-actions">
+                    <a href="https://github.com/IlyaP358/fluxcast" target="_blank" class="btn btn-primary">
+                        View Repository
+                    </a>
+                    <a href="#docs" class="btn btn-secondary">
+                        Read Documentation
+                    </a>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <div class="video-glow"></div>
+                    <video id="demo-video" autoplay loop muted playsinline>
+                        <source src="final_git_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        Isn't this just like like gnome-network-displays?
+                    </h3>
+                    <p class="faq-answer">Kind of, but not really. gnome-network-displays gave me one frame and then
+                        froze. FluxCast implements the full WFD/Miracast stack from scratch in Python - Wi-Fi Direct via
+                        NetworkManager, full RTSP handshake, RTP media stream. It actually works.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        Why Python?
+                    </h3>
+                    <p class="faq-answer">Because I wanted to understand every layer of the protocol, and Python made
+                        that easy. Also, miraclecast is written in C and hasn't been meaningfully updated in years. A
+                        Python implementation is easier to contribute to.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                            <polyline points="17 2 12 7 7 2"></polyline>
+                        </svg>
+                        Does it work on my TV?
+                    </h3>
+                    <p class="faq-answer">Samsung - yes, tested extensively. LG - getting there, active work in
+                        progress. Others - unknown, need testers.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                        Does it work on my compositor?
+                    </h3>
+                    <p class="faq-answer">Hyprland and Sway — yes, natively via wf-recorder. KDE Plasma — yes, via
+                        xdg-desktop-portal. GNOME — coming soon. X11 — yes, via x11grab fallback.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <img src="linux_logo.png" alt="Linux Tux" class="faq-icon-img">
+                        Why is casting on Linux still this hard in 2026?
+                    </h3>
+                    <p class="faq-answer">Miracast requires Wi-Fi Direct at kernel level, RTSP signaling, H.264 hardware
+                        encoding, and HDCP - and getting all of these to handshake with a real TV without controlling
+                        both endpoints is genuinely painful. FluxCast is an attempt to solve this properly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        How do I contribute?
+                    </h3>
+                    <p class="faq-answer">Run <code>python3 main.py --doctor</code> and see what breaks. Open an issue
+                        with your TV model and compositor. PRs welcome, especially for new TV profiles and capture
+                        backends.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="docs" class="documentation-section">
+            <div class="section-header">
+                <h2>Documentation</h2>
+                <p>Always up-to-date with the main repository</p>
+            </div>
+            <div class="docs-container" id="markdown-content">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Loading documentation from GitHub...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="flcast_logo_512x512.png" alt="FluxCast Logo" class="footer-logo">
+                <span>FluxCast</span>
+            </div>
+            <p>Open-source wireless display casting tool for Linux.</p>
+            <div class="footer-contact" style="margin-top: 1.5rem; font-size: 0.95rem;">
+                <p style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <strong style="font-size: 1.1rem; color: var(--text-secondary);">@</strong> 
+                    <a href="mailto:illia.pukalov@teleinformatika.eu" style="color: var(--accent-color); text-decoration: none; transition: opacity 0.2s;">illia.pukalov@teleinformatika.eu</a>
+                </p>
+                <p style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.5rem;">
+                    <img src="discord_logo.png" alt="Discord" style="width: 20px; height: 20px; object-fit: contain;">
+                    <span style="color: var(--accent-color);">ilyapablo</span>
+                </p>
+            </div>
+            <p class="copyright">© 2026 IlyaP358. Licensed under the GPL-3.0 License.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
