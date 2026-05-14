@@ -15,6 +15,11 @@ const CONTRIBUTORS_DATA = [
     "platform": "github"
   },
   {
+    "name": "alba4k",
+    "url": "https://github.com/alba4k",
+    "platform": "github"
+  },
+  {
     "name": "EfficiencyMurky7309",
     "url": "https://reddit.com/user/EfficiencyMurky7309/",
     "platform": "reddit",
