@@ -20,6 +20,11 @@ const CONTRIBUTORS_DATA = [
     "platform": "github"
   },
   {
+    "name": "mzl2233",
+    "url": "https://github.com/mzl2233",
+    "platform": "github"
+  },
+  {
     "name": "EfficiencyMurky7309",
     "url": "https://reddit.com/user/EfficiencyMurky7309/",
     "platform": "reddit",
