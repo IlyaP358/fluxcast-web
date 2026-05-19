@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const DOCS_URL = 'https://raw.githubusercontent.com/IlyaP358/fluxcast/main/documentation/documentation.md';
+    const DOCS_URL = 'https://raw.githubusercontent.com/IlyaP358/fluxcast/main/documentation/DOCUMENTATION.md';
     const container = document.getElementById('markdown-content');
 
     marked.setOptions({
