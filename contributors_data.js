@@ -25,6 +25,12 @@ const CONTRIBUTORS_DATA = [
     "platform": "github"
   },
   {
+    "name": "Utkarsh",
+    "url": "https://github.com/UtkarshVerma",
+    "platform": "discord",
+    "avatar_url": "https://cdn.discordapp.com/avatars/373386982279086080/01c4187de404f3207c7e535bea79a62a.webp?size=128"
+  },
+  {
     "name": "EfficiencyMurky7309",
     "url": "https://reddit.com/user/EfficiencyMurky7309/",
     "platform": "reddit",
@@ -37,3 +43,4 @@ const CONTRIBUTORS_DATA = [
     "avatar_url": "https://i.redd.it/snoovatar/avatars/4b3ada05-2de0-4d66-8a30-9462f1de8472.png"
   }
 ];
+2
