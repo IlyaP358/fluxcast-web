@@ -35,6 +35,11 @@ const CONTRIBUTORS_DATA = [
     "platform": "github"
   },
   {
+    "name": "badcast",
+    "url": "https://github.com/badcast",
+    "platform": "github"
+  },
+  {
     "name": "SebSch182",
     "url": "https://github.com/SebSch182",
     "platform": "github"
