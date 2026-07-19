@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fluxcast.secweb.cloud/sitemap.xml
+Sitemap: https://fluxcast.dev/sitemap.xml
