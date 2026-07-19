@@ -91,6 +91,11 @@ const CONTRIBUTORS_DATA = [
     "url": "https://reddit.com/user/ukhu-pacha/",
     "platform": "reddit",
     "avatar_url": "https://i.redd.it/snoovatar/avatars/4b3ada05-2de0-4d66-8a30-9462f1de8472.png"
+  },
+  {
+    "name": "lordmeyer",
+    "url": "https://reddit.com/user/lordmeyer/",
+    "platform": "reddit",
+    "avatar_url": "https://styles.redditmedia.com/t5_cqll9/styles/profileIcon_r2k6242kt6p31.png?frame=1&auto=webp&crop=256%3A256%2Csmart&s=3aef173d426e50da6cd472893f90432a49de95a2"
   }
 ];
-2
