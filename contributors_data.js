@@ -99,3 +99,12 @@ const CONTRIBUTORS_DATA = [
     "avatar_url": "https://styles.redditmedia.com/t5_cqll9/styles/profileIcon_r2k6242kt6p31.png?frame=1&auto=webp&crop=256%3A256%2Csmart&s=3aef173d426e50da6cd472893f90432a49de95a2"
   }
 ];
+
+const SUPPORTERS_DATA = [
+  {
+    "name": "Uros C.",
+    "url": "https://ko-fi.com/fluxcast",
+    "platform": "kofi",
+    "avatar_url": "https://ko-fi.com/img/anon2.png?v=11"
+  },
+];

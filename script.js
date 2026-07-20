@@ -16,7 +16,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initCommunitySection();
     initInstallCopy();
+    initSupportGlow();
 });
+
+function initSupportGlow() {
+    const card = document.querySelector('.support-inner');
+    if (!card) return;
+
+    const STIFFNESS = 0.020;
+    const DAMPING = 0.82;
+
+    let targetX = 0, targetY = 0;
+    let posX = 0, posY = 0, velX = 0, velY = 0;
+    let hovering = false, raf = null;
+
+    const setTarget = (e) => {
+        const rect = card.getBoundingClientRect();
+        targetX = e.clientX - rect.left;
+        targetY = e.clientY - rect.top;
+    };
+
+    const tick = () => {
+        velX = (velX + (targetX - posX) * STIFFNESS) * DAMPING;
+        velY = (velY + (targetY - posY) * STIFFNESS) * DAMPING;
+        posX += velX;
+        posY += velY;
+        card.style.setProperty('--mx', `${posX}px`);
+        card.style.setProperty('--my', `${posY}px`);
+
+        const settled = Math.abs(velX) < 0.03 && Math.abs(velY) < 0.03
+            && Math.abs(targetX - posX) < 0.03 && Math.abs(targetY - posY) < 0.03;
+        if (hovering || !settled) {
+            raf = requestAnimationFrame(tick);
+        } else {
+            raf = null;
+        }
+    };
+
+    card.addEventListener('mouseenter', (e) => {
+        hovering = true;
+        setTarget(e);
+        posX = targetX; posY = targetY; velX = 0; velY = 0;
+        card.style.setProperty('--mx', `${posX}px`);
+        card.style.setProperty('--my', `${posY}px`);
+        if (!raf) raf = requestAnimationFrame(tick);
+    });
+
+    card.addEventListener('mousemove', setTarget);
+
+    card.addEventListener('mouseleave', () => {
+        hovering = false;
+    });
+}
 
 function initInstallCopy() {
     document.querySelectorAll('.copy-btn').forEach(btn => {

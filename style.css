@@ -114,6 +114,140 @@ html {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
+.support-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #FF5E5B;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color: #fff !important;
+    font-weight: 600;
+    transition: all 0.2s !important;
+    box-shadow: 0 2px 12px rgba(255, 94, 91, 0.35);
+}
+
+.support-btn:hover {
+    background: #ff4744;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 18px rgba(255, 94, 91, 0.5);
+}
+
+.nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -8px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.nav-toggle svg {
+    width: 26px;
+    height: 26px;
+    display: block;
+    pointer-events: none;
+}
+
+.support-section {
+    max-width: 1080px;
+    margin: 0 auto 120px;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.support-inner {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 3.5rem 2.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.support-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    mix-blend-mode: screen;
+    background:
+        radial-gradient(circle 540px at var(--mx, 50%) var(--my, 50%),
+            rgba(255, 13, 0, 0.4),
+            rgba(214, 10, 7, 0.16) 45%,
+            transparent 68%);
+}
+
+.support-inner:hover::before {
+    opacity: 1;
+}
+
+.support-inner > * {
+    position: relative;
+    z-index: 1;
+}
+
+.support-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.support-text {
+    color: var(--text-secondary);
+    font-size: 1.08rem;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto 2.25rem;
+}
+
+.kofi-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #FF5E5B;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1.1rem 2.5rem;
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(255, 94, 91, 0.45);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.kofi-btn svg {
+    width: 30px;
+    height: 30px;
+}
+
+.kofi-btn:hover {
+    background: #ff4744;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(255, 94, 91, 0.6);
+}
+
+.support-note {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 1.75rem;
+}
+
 .hero {
     max-width: 1200px;
     margin: 0 auto;
@@ -746,10 +880,45 @@ footer {
         font-size: 2.5rem;
     }
     
-    .nav-links a:not(.github-btn) {
-        display: none;
+    .nav-toggle {
+        display: flex;
     }
-    
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        padding: 0.75rem 1.5rem 1.25rem;
+        background: var(--bg-color);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .nav-links a {
+        padding: 0.85rem 0.5rem;
+        font-size: 1.05rem;
+    }
+
+    .github-btn,
+    .support-btn {
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+
     .docs-container {
         padding: 1.5rem;
     }
