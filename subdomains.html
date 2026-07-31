@@ -4,21 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FluxCast — Get a .fluxcast.dev subdomain</title>
+    <title>Get a free .fluxcast.dev subdomain for developers</title>
 
     <meta name="description"
-        content="Free yourname.fluxcast.dev subdomains for developers. One pull request, live in minutes.">
+        content="Get a free .fluxcast.dev subdomain for developers — works with GitHub Pages, Netlify and Vercel. One pull request, no signup, live in minutes.">
     <link rel="canonical" href="https://sub.fluxcast.dev/">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="FluxCast">
-    <meta property="og:title" content="Get a free .fluxcast.dev subdomain">
+    <meta property="og:title" content="Get a free .fluxcast.dev subdomain for developers">
     <meta property="og:description"
-        content="Free yourname.fluxcast.dev subdomains for developers. One pull request, live in minutes.">
+        content="Free .fluxcast.dev subdomains for developers — works with GitHub Pages, Netlify and Vercel. One pull request, no signup, live in minutes.">
     <meta property="og:url" content="https://sub.fluxcast.dev/">
     <meta property="og:image" content="https://fluxcast.dev/flcast_logo_512x512.png">
     <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "Is a .fluxcast.dev subdomain really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A .fluxcast.dev subdomain is completely free, with no payment, no card and no ads. You only need a GitHub account to open a pull request." } },
+            { "@type": "Question", "name": "How do I get a free subdomain?", "acceptedAnswer": { "@type": "Answer", "text": "Fork the fluxcast-domains repository, add a small JSON file named after your subdomain with your DNS records, and open a pull request. Once it is merged, yourname.fluxcast.dev goes live within minutes." } },
+            { "@type": "Question", "name": "Can I use the free subdomain with GitHub Pages, Netlify or Vercel?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Point a CNAME record to your host (for example your-username.github.io) in the JSON file and your site is served on your own .fluxcast.dev subdomain." } },
+            { "@type": "Question", "name": "Do I need an account or SMS verification?", "acceptedAnswer": { "@type": "Answer", "text": "No SMS, no dashboard and no separate account — just your existing GitHub account and one pull request." } },
+            { "@type": "Question", "name": "What can I use a .fluxcast.dev subdomain for?", "acceptedAnswer": { "@type": "Answer", "text": "Personal sites, project pages, portfolios, documentation or APIs — anything you would host on a normal domain." } }
+        ]
+    }
+    </script>
 
     <link rel="icon" type="image/png" href="https://fluxcast.dev/flcast_logo_512x512.png">
 
@@ -92,6 +106,28 @@
         .sub-code .ky { color: var(--accent-color); }
         .sub-cta { text-align: center; margin-bottom: 6rem; }
         .sub-cta .btn { margin: 0 0.35rem; }
+        .sub-faq { max-width: 760px; margin: 0 auto 6rem; padding: 0 2rem; }
+        .sub-faq h2 { text-align: center; font-size: 1.9rem; font-weight: 800; margin-bottom: 1.75rem; }
+        .sub-faq details {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .sub-faq summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-primary);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .sub-faq summary::-webkit-details-marker { display: none; }
+        .sub-faq summary::after { content: "+"; color: var(--accent-color); font-weight: 700; }
+        .sub-faq details[open] summary::after { content: "\2212"; }
+        .sub-faq details p { color: var(--text-secondary); margin-top: 0.85rem; font-size: 0.98rem; line-height: 1.65; }
     </style>
 </head>
 
@@ -132,9 +168,9 @@
     <main>
         <section class="hero sub-hero">
             <div class="hero-content">
-                <h1 class="hero-title">Get your own<br><span class="gradient-text">.fluxcast.dev</span> subdomain</h1>
-                <p class="hero-subtitle">Free <code style="font-family:'Fira Code',monospace;color:var(--accent-color)">yourname.fluxcast.dev</code>
-                    for developers. One pull request, live in minutes — without sms and registration =]</p>
+                <h1 class="hero-title">Get a free<br><span class="gradient-text">.fluxcast.dev</span> subdomain</h1>
+                <p class="hero-subtitle">A free <code style="font-family:'Fira Code',monospace;color:var(--accent-color)">yourname.fluxcast.dev</code>
+                    subdomain for developers — works with GitHub Pages, Netlify and Vercel. One pull request, no signup, live in minutes.</p>
                 <div class="hero-actions">
                     <a href="https://github.com/IlyaP358/fluxcast-domains/fork" target="_blank" class="btn btn-primary">
                         Fork &amp; start
@@ -190,6 +226,35 @@
         <div class="sub-cta">
             <a href="https://github.com/IlyaP358/fluxcast-domains" target="_blank" class="btn btn-primary">Open the registry on GitHub</a>
         </div>
+
+        <section class="sub-faq">
+            <h2>Free subdomain FAQ</h2>
+            <details open>
+                <summary>Is a .fluxcast.dev subdomain really free?</summary>
+                <p>Yes. A .fluxcast.dev subdomain is completely free, with no payment, no card and no ads. You only need a
+                    GitHub account to open a pull request.</p>
+            </details>
+            <details>
+                <summary>How do I get a free subdomain?</summary>
+                <p>Fork the <code>fluxcast-domains</code> repository, add a small JSON file named after your subdomain with
+                    your DNS records, and open a pull request. Once it is merged, <code>yourname.fluxcast.dev</code> goes
+                    live within minutes.</p>
+            </details>
+            <details>
+                <summary>Can I use the free subdomain with GitHub Pages, Netlify or Vercel?</summary>
+                <p>Yes. Point a CNAME record to your host (for example <code>your-username.github.io</code>) in the JSON
+                    file and your site is served on your own .fluxcast.dev subdomain.</p>
+            </details>
+            <details>
+                <summary>Do I need an account or SMS verification?</summary>
+                <p>No SMS, no dashboard and no separate account — just your existing GitHub account and one pull request.</p>
+            </details>
+            <details>
+                <summary>What can I use a .fluxcast.dev subdomain for?</summary>
+                <p>Personal sites, project pages, portfolios, documentation or APIs — anything you would host on a normal
+                    domain.</p>
+            </details>
+        </section>
 
         <section id="community" class="community-section">
             <div class="community-bubbles" id="community-bubbles"></div>
