@@ -137,4 +137,10 @@ const SUPPORTERS_DATA = [
     "platform": "kofi",
     "avatar_url": "https://ko-fi.com/img/anon2.png?v=11"
   },
+  {
+    "name": "Osuushi",
+    "url": "https://ko-fi.com/fluxcast",
+    "platform": "kofi",
+    "avatar_url": "https://ko-fi.com/img/anon6.png?v=1"
+  },
 ];
