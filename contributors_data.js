@@ -138,9 +138,9 @@ const SUPPORTERS_DATA = [
     "avatar_url": "https://ko-fi.com/img/anon2.png?v=11"
   },
   {
-    "name": "Osuushi",
+    "name": "Volondil",
     "url": "https://ko-fi.com/fluxcast",
     "platform": "kofi",
-    "avatar_url": "https://ko-fi.com/img/anon6.png?v=1"
+    "avatar_url": "https://storage.ko-fi.com/cdn/useruploads/8555d50b-08f2-45e5-a541-026ca107fefe_b3206b39-9e10-4213-afe2-9547aaac50d5.png"
   },
 ];
