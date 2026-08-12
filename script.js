@@ -104,7 +104,7 @@ function initCommunitySection() {
     if (!bubblesContainer) return;
 
     const GUILD_ID = '1503031381461303364';
-    const INVITE_API = 'https://discord.com/api/v10/invites/Qa2UTZPpPh?with_counts=true';
+    const INVITE_API = 'https://discord.com/api/v10/invites/GCmPNpJZM7?with_counts=true';
     const WIDGET_API = `https://discord.com/api/guilds/${GUILD_ID}/widget.json`;
     const MAX_BUBBLES = 50;
     const MIN_BUBBLES = 10;
@@ -144,9 +144,13 @@ function initCommunitySection() {
         .then(r => r.json())
         .then(data => {
             const count = data.approximate_member_count;
-            if (countEl && count) countEl.textContent = count.toLocaleString();
+            if (!count) throw new Error('no member count');
+            if (countEl) countEl.textContent = count.toLocaleString();
         })
-        .catch(() => { if (countEl) countEl.textContent = '5'; });
+        .catch(() => {
+            const stats = document.getElementById('community-stats');
+            if (stats) stats.style.display = 'none';
+        });
 
     fetch(WIDGET_API)
         .then(r => {
