@@ -110,6 +110,26 @@ const CONTRIBUTORS_DATA = [
     "platform": "github"
   },
   {
+    "name": "Jemo121",
+    "url": "https://github.com/Jemo121",
+    "platform": "github"
+  },
+  {
+    "name": "peternormann",
+    "url": "https://github.com/peternormann",
+    "platform": "github"
+  },
+  {
+    "name": "t0mab",
+    "url": "https://github.com/t0mab",
+    "platform": "github"
+  },
+  {
+    "name": "therealresonix",
+    "url": "https://github.com/therealresonix",
+    "platform": "github"
+  },
+  {
     "name": "Utkarsh",
     "url": "https://github.com/UtkarshVerma",
     "platform": "discord",
