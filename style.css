@@ -699,6 +699,7 @@ video {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--text-secondary);
+    text-align: center;
 }
 
 .install-cmd {
