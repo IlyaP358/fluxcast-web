@@ -188,4 +188,10 @@ const SUPPORTERS_DATA = [
     "platform": "kofi",
     "avatar_url": "https://storage.ko-fi.com/cdn/useruploads/8555d50b-08f2-45e5-a541-026ca107fefe_b3206b39-9e10-4213-afe2-9547aaac50d5.png"
   },
+  {
+    "name": "try-another-username",
+    "url": "https://ko-fi.com/fluxcast",
+    "platform": "kofi",
+    "avatar_url": "https://ko-fi.com/img/anon18.png?v=11"
+  }
 ];
