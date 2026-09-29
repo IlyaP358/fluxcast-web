@@ -377,19 +377,15 @@ video {
 .faq-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .faq-item {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: border-color 0.3s ease;
-}
-
-.faq-item:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 2rem 0;
 }
 
 .faq-question {
@@ -428,6 +424,15 @@ video {
     font-size: 0.9em;
     font-family: 'Fira Code', monospace;
     color: var(--accent-color);
+}
+
+.faq-answer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
 }
 
 .documentation-section {

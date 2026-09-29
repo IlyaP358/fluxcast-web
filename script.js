@@ -25,10 +25,14 @@ function initSupportGlow() {
 
     const STIFFNESS = 0.020;
     const DAMPING = 0.82;
+    const STEP = 1000 / 60; // constants above are tuned per 60Hz step, not per frame
+    const MAX_CATCHUP = 100;
+    const FADE_MS = 600;
 
     let targetX = 0, targetY = 0;
     let posX = 0, posY = 0, velX = 0, velY = 0;
     let hovering = false, raf = null;
+    let lastTime = 0, accumulator = 0, leftAt = -Infinity;
 
     const setTarget = (e) => {
         const rect = card.getBoundingClientRect();
@@ -36,11 +40,18 @@ function initSupportGlow() {
         targetY = e.clientY - rect.top;
     };
 
-    const tick = () => {
-        velX = (velX + (targetX - posX) * STIFFNESS) * DAMPING;
-        velY = (velY + (targetY - posY) * STIFFNESS) * DAMPING;
-        posX += velX;
-        posY += velY;
+    const tick = (now) => {
+        accumulator += lastTime ? Math.min(now - lastTime, MAX_CATCHUP) : STEP;
+        lastTime = now;
+
+        while (accumulator >= STEP) {
+            velX = (velX + (targetX - posX) * STIFFNESS) * DAMPING;
+            velY = (velY + (targetY - posY) * STIFFNESS) * DAMPING;
+            posX += velX;
+            posY += velY;
+            accumulator -= STEP;
+        }
+
         card.style.setProperty('--mx', `${posX}px`);
         card.style.setProperty('--my', `${posY}px`);
 
@@ -50,15 +61,21 @@ function initSupportGlow() {
             raf = requestAnimationFrame(tick);
         } else {
             raf = null;
+            lastTime = 0;
+            accumulator = 0;
         }
     };
 
     card.addEventListener('mouseenter', (e) => {
         hovering = true;
         setTarget(e);
-        posX = targetX; posY = targetY; velX = 0; velY = 0;
-        card.style.setProperty('--mx', `${posX}px`);
-        card.style.setProperty('--my', `${posY}px`);
+        if (performance.now() - leftAt > FADE_MS) {
+            posX = targetX; posY = targetY; velX = 0; velY = 0;
+            card.style.setProperty('--mx', `${posX}px`);
+            card.style.setProperty('--my', `${posY}px`);
+        }
+        lastTime = 0;
+        accumulator = 0;
         if (!raf) raf = requestAnimationFrame(tick);
     });
 
@@ -66,6 +83,7 @@ function initSupportGlow() {
 
     card.addEventListener('mouseleave', () => {
         hovering = false;
+        leftAt = performance.now();
     });
 }
 

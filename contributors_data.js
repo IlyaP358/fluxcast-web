@@ -155,6 +155,16 @@ const CONTRIBUTORS_DATA = [
     "platform": "github"
   },
   {
+    "name": "jainprashul",
+    "url": "https://github.com/jainprashul",
+    "platform": "github"
+  },
+  {
+    "name": "hajar-benhadj",
+    "url": "https://github.com/hajar-benhadj",
+    "platform": "github"
+  },
+  {
     "name": "Utkarsh",
     "url": "https://github.com/UtkarshVerma",
     "platform": "discord",
