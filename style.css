@@ -17,7 +17,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.6;
@@ -35,7 +35,7 @@ html {
     transform: translateX(-50%);
     width: 100vw;
     height: 800px;
-    background: radial-gradient(ellipse at top center, rgba(74, 222, 128, 0.15) 0%, rgba(5, 150, 105, 0.08) 40%, transparent 70%);
+    background: radial-gradient(ellipse at top center, rgba(74, 222, 128, 0.09) 0%, rgba(5, 150, 105, 0.05) 40%, transparent 70%);
     filter: blur(60px);
     z-index: -1;
     pointer-events: none;
@@ -70,13 +70,13 @@ html {
 .logo {
     width: 32px;
     height: 32px;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .brand-name {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.25rem;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.2px;
 }
 
 .nav-links {
@@ -103,7 +103,7 @@ html {
     gap: 0.5rem;
     background: var(--surface-color);
     padding: 0.5rem 1rem;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid var(--border-color);
     color: var(--text-primary) !important;
     transition: all 0.2s !important;
@@ -120,18 +120,15 @@ html {
     gap: 0.5rem;
     background: #FF5E5B;
     padding: 0.5rem 1rem;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid transparent;
     color: #fff !important;
     font-weight: 600;
     transition: all 0.2s !important;
-    box-shadow: 0 2px 12px rgba(255, 94, 91, 0.35);
 }
 
 .support-btn:hover {
     background: #ff4744;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 18px rgba(255, 94, 91, 0.5);
 }
 
 .nav-toggle {
@@ -146,7 +143,7 @@ html {
     color: var(--text-primary);
     cursor: pointer;
     padding: 0;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .nav-toggle svg {
@@ -169,9 +166,9 @@ html {
     isolation: isolate;
     background: var(--surface-color);
     border: 1px solid var(--border-color);
-    border-radius: 24px;
+    border-radius: 10px;
     padding: 3.5rem 2.5rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .support-inner::before {
@@ -185,10 +182,10 @@ html {
     transition: opacity 0.6s ease-in-out;
     mix-blend-mode: screen;
     background:
-        radial-gradient(circle 540px at var(--mx, 50%) var(--my, 50%),
-            rgba(255, 13, 0, 0.4),
-            rgba(214, 10, 7, 0.16) 45%,
-            transparent 68%);
+        radial-gradient(circle 400px at var(--mx, 50%) var(--my, 50%),
+            #ff001e87,
+            rgba(224, 14, 7, 0.232) 42%,
+            transparent 82%);
 }
 
 .support-inner:hover::before {
@@ -202,8 +199,8 @@ html {
 
 .support-title {
     font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
     margin-bottom: 1rem;
     color: var(--text-primary);
 }
@@ -225,10 +222,9 @@ html {
     font-size: 1.25rem;
     font-weight: 700;
     padding: 1.1rem 2.5rem;
-    border-radius: 14px;
+    border-radius: 6px;
     text-decoration: none;
-    box-shadow: 0 10px 30px rgba(255, 94, 91, 0.45);
-    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    transition: background 0.2s, box-shadow 0.25s, filter 0.2s;
 }
 
 .kofi-btn svg {
@@ -238,8 +234,8 @@ html {
 
 .kofi-btn:hover {
     background: #ff4744;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 16px 40px rgba(255, 94, 91, 0.6);
+    filter: brightness(1.08);
+    box-shadow: 0 0 28px rgba(255, 94, 91, 0.85), 0 14px 38px rgba(255, 94, 91, 0.45);
 }
 
 .support-note {
@@ -249,25 +245,28 @@ html {
 }
 
 .hero {
-    max-width: 1200px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 160px 2rem 80px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(360px, 610px) minmax(500px, 1fr);
     align-items: center;
-    text-align: center;
+    gap: 2.5rem;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin-bottom: 4rem;
+    max-width: 610px;
+    text-align: left;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-title {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 400;
     line-height: 1.1;
-    letter-spacing: -1.5px;
+    letter-spacing: -0.5px;
     margin-bottom: 1.5rem;
 }
 
@@ -279,39 +278,77 @@ html {
 }
 
 .hero-subtitle {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.25rem;
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 560px;
 }
 
 .hero-actions {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: 1rem;
+}
+
+.hero-actions .btn {
+    white-space: nowrap;
+}
+
+.hero-btn-download {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+    color: #04130a;
+    border: 1px solid rgba(134, 239, 172, 0.35);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.35);
+    font-weight: 700;
+}
+
+.hero-btn-download:hover {
+    filter: brightness(1.07);
+}
+
+#latest-release-version {
+    margin-left: 0.15rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+}
+
+.hero-btn-repo {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+}
+
+.hero-btn-repo:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: none;
+    box-shadow: none;
+}
+
+.hero-actions .btn-secondary:hover {
+    transform: none;
 }
 
 .btn {
     padding: 0.875rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 6px;
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
 }
 
 .btn-primary {
     background: var(--text-primary);
     color: var(--bg-color);
-    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    background: #fff;
 }
 
 .btn-secondary {
@@ -323,23 +360,27 @@ html {
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
 }
 
 .video-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 980px;
     position: relative;
+    justify-self: end;
+    transform: translateY(22px);
 }
 
 .video-wrapper {
     position: relative;
-    border-radius: 12px;
+    border-radius: 10px;
     background: var(--surface-color);
     padding: 8px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     z-index: 1;
+    transform: rotate(-0.35deg);
+    transform-origin: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .video-glow {
@@ -351,20 +392,25 @@ html {
     height: 100%;
     background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
     filter: blur(100px);
-    opacity: 0.15;
+    opacity: 0.1;
     z-index: -1;
     border-radius: inherit;
     transition: opacity 0.3s ease;
 }
 
 .video-wrapper:hover .video-glow {
-    opacity: 0.25;
+    opacity: 0.16;
+}
+
+.video-wrapper:hover {
+    transform: rotate(-0.35deg);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
 }
 
 video {
     width: 100%;
     height: auto;
-    border-radius: 6px;
+    border-radius: 4px;
     display: block;
 }
 
@@ -390,7 +436,7 @@ video {
 
 .faq-question {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 1rem;
     color: var(--text-primary);
     display: flex;
@@ -422,7 +468,7 @@ video {
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-size: 0.9em;
-    font-family: 'Fira Code', monospace;
+    font-family: 'Ubuntu', sans-serif;
     color: var(--accent-color);
 }
 
@@ -448,7 +494,7 @@ video {
 
 .section-header h2 {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 0.5rem;
 }
 
@@ -459,7 +505,7 @@ video {
 .docs-container {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
+    border-radius: 10px;
     padding: 3rem;
     position: relative;
     overflow: hidden;
@@ -477,6 +523,7 @@ video {
 
 .docs-container h1 {
     font-size: 2rem;
+    font-weight: 400;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-color);
@@ -484,12 +531,14 @@ video {
 
 .docs-container h2 {
     font-size: 1.5rem;
+    font-weight: 500;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .docs-container h3 {
     font-size: 1.25rem;
+    font-weight: 500;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
@@ -519,7 +568,7 @@ video {
 }
 
 .docs-container code {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Ubuntu', sans-serif;
     background: rgba(0, 0, 0, 0.3);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
@@ -530,7 +579,7 @@ video {
 .docs-container pre {
     background: #0D1117;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 1.25rem;
     overflow-x: auto;
     margin-bottom: 1.5rem;
@@ -571,8 +620,8 @@ video {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-radius: 24px;
-    background: radial-gradient(ellipse at center, rgba(88, 101, 242, 0.08) 0%, transparent 65%);
+    border-radius: 10px;
+    background: radial-gradient(ellipse at center, rgba(88, 101, 242, 0.06) 0%, transparent 65%);
 }
 
 .community-bubbles {
@@ -627,7 +676,7 @@ video {
     margin: 0 auto 1.5rem;
     color: #fff;
     filter: drop-shadow(0 0 16px rgba(88, 101, 242, 0.6));
-    transition: transform 0.2s, filter 0.2s;
+    transition: filter 0.2s;
 }
 
 .community-server-icon svg {
@@ -637,7 +686,6 @@ video {
 }
 
 .community-server-icon:hover {
-    transform: translateY(-2px) scale(1.04);
     filter: drop-shadow(0 0 24px rgba(88, 101, 242, 0.85));
 }
 
@@ -654,8 +702,8 @@ video {
 
 .install-title {
     font-size: 2.4rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
 }
@@ -668,9 +716,9 @@ video {
 .install-card {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 0.5rem 1.5rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .install-row {
@@ -716,9 +764,31 @@ video {
     gap: 1rem;
     background: var(--bg-color);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 6px;
     padding: 0.85rem 1rem 0.85rem 1.1rem;
-    font-family: 'Fira Code', monospace;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.install-deb {
+    flex: 1;
+    min-width: 0;
+}
+
+.install-alt {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.install-alt a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.install-alt a:hover {
+    color: var(--text-primary);
 }
 
 .install-cmd code {
@@ -727,6 +797,20 @@ video {
     color: var(--text-primary);
     white-space: nowrap;
     overflow-x: auto;
+}
+
+.install-cmd-multi {
+    align-items: flex-start;
+}
+
+.install-cmd-multi code {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.85rem;
+    line-height: 1.9;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    overflow-x: visible;
 }
 
 .install-prompt {
@@ -743,7 +827,7 @@ video {
     width: 34px;
     height: 34px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     background: transparent;
     color: var(--text-secondary);
     cursor: pointer;
@@ -789,8 +873,8 @@ video {
 
 .community-title {
     font-size: 2.4rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
     margin-bottom: 0.65rem;
     color: var(--text-primary);
 }
@@ -853,7 +937,7 @@ footer {
     justify-content: center;
     gap: 0.75rem;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.25rem;
 }
 
@@ -881,9 +965,58 @@ footer {
     margin-top: 1.5rem;
 }
 
+@media (max-width: 1080px) {
+    .hero {
+        grid-template-columns: minmax(300px, 520px) minmax(390px, 1fr);
+        gap: 2rem;
+        padding-top: 145px;
+    }
+
+    .hero-title {
+        font-size: 3.3rem;
+    }
+
+    .video-container {
+        max-width: 820px;
+        transform: translateY(12px);
+    }
+}
+
 @media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-top: 128px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 760px;
+        text-align: center;
+    }
+
     .hero-title {
         font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .video-container {
+        justify-self: center;
+        max-width: 1000px;
+        transform: none;
+    }
+
+    .video-wrapper {
+        transform: none;
     }
     
     .nav-toggle {
@@ -901,7 +1034,7 @@ footer {
         padding: 0.75rem 1.5rem 1.25rem;
         background: var(--bg-color);
         border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
         opacity: 0;
         transform: translateY(-10px);
         pointer-events: none;
@@ -927,5 +1060,21 @@ footer {
 
     .docs-container {
         padding: 1.5rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero {
+        padding: 120px 1.25rem 60px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
 }

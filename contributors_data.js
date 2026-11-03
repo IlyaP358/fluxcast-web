@@ -238,5 +238,11 @@ const SUPPORTERS_DATA = [
     "url": "https://ko-fi.com/fluxcast",
     "platform": "kofi",
     "avatar_url": "https://ko-fi.com/img/anon18.png?v=11"
+  },
+  {
+    "name": "Ondřej M.",
+    "url": "https://ko-fi.com/fluxcast",
+    "platform": "kofi",
+    "avatar_url": "https://storage.ko-fi.com/cdn/useruploads/883ad9e6-fe8b-42eb-95c5-18082c173145_8716e2db-da3c-484e-ab49-8be38ab1b110.png"
   }
 ];

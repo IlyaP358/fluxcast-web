@@ -17,7 +17,31 @@ document.addEventListener('DOMContentLoaded', () => {
     initCommunitySection();
     initInstallCopy();
     initSupportGlow();
+    initLatestReleaseCta();
 });
+
+function initLatestReleaseCta() {
+    const button = document.getElementById('download-latest-btn');
+    const versionText = document.getElementById('latest-release-version');
+    if (!button || !versionText) return;
+
+    fetch('https://api.github.com/repos/IlyaP358/fluxcast/releases/latest', {
+        headers: { Accept: 'application/vnd.github+json' }
+    })
+        .then((response) => {
+            if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+            return response.json();
+        })
+        .then((release) => {
+            const tag = typeof release?.tag_name === 'string' ? release.tag_name.trim() : '';
+            if (!tag) return;
+            versionText.textContent = tag;
+            button.setAttribute('aria-label', `Download ${tag} from GitHub Releases`);
+        })
+        .catch(() => {
+            // Keep the fallback label "latest" when API is unavailable or rate-limited.
+        });
+}
 
 function initSupportGlow() {
     const card = document.querySelector('.support-inner');
